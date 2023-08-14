@@ -17,3 +17,5 @@ insert into teacher(`name`,age,country)
 values ("Long",25,"DN"), ("Viet",30,"HN"),("Hau",20,"DN");
 select * from bai_tap_ss1.class;
 select * from bai_tap_ss1.teacher;
+
+alter table class rename class_room;
