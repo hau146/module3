@@ -1,8 +1,9 @@
 use quanlysinhvien_ss3;
 
 -- Hiển thị tất cả các thông tin môn học (bảng subject) có credit lớn nhất.
-select name_sub, max(credit)
-from `subject`;
+select *
+from `subject`
+where credit = (select max(credit) from `subject`);
 
 -- Hiển thị các thông tin môn học có điểm thi lớn nhất.
 select *, max(mark) as 'max mark'
