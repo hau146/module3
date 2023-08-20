@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        font-family: "Arial Rounded MT Bold";
+        margin: 0;
+    }
+    #menu{
+        height: 70px;
+        padding: 0;
+        margin: 0;
+        background-color: gray;
+        border: 1px solid white;
+    }
+    #menu ul, #menu li{
+        padding: 0;
+        margin: 0;
+    }
+    #menu li {
+        position: relative;
+        float: left;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
+    #menu li a{
+        width: 100px;
+        height: 70px;
+        display: block;
+        text-decoration: none;
+        text-align: center;
+        line-height: 70px;
+        background-color: grey;
+        color: white;
+    }
+    #menu ul ul li a{
+        width: 200px;
+        text-align: left;
+        padding-left: 15px;
+    }
+    #menu li a:hover{
+        background-color: darkgray;
+    }
+    #menu ul ul{
+        position: absolute;
+        top: 72px;
+        left: 10px;
+        visibility: hidden;
+    }
+    #menu ul li:hover ul{
+        visibility: visible;
+    }
+    #login {
+        text-align: center;
+        float: right;
+        width: 100px;
+        height: 70px;
+        display: block;
+        text-decoration: none;
+        line-height: 70px;
+        font-weight: bold;
+        cursor: pointer;
+    }
+    #header1{
+        background: darkseagreen;
+        height: 600px;
+        width: 20%;
+        float: left;
+    }
+    #header2{
+        background: blanchedalmond;
+        height: 600px;
+        width: 60%;
+        float: left;
+    }
+    #header3{
+        background: darkseagreen;
+        height: 600px;
+        width: 20%;
+        float: left;
+    }
+    #ad{
+        text-align: center;
+        background: wheat;
+        height: 70px;
+        width: 70%;
+        margin: auto;
+        margin-bottom: 20px;
+        line-height: 70px;
+    }
+    #as{
+        text-align: center;
+        background: wheat;
+        height: 70px;
+        width: 70%;
+        margin: auto;
+        line-height: 70px;
+    }
+    h1,p,h2{
+        text-indent: 50px;
+    }
+    #bot{
+        background: cadetblue;
+        text-align: center;
+        font-weight: bold;
+        height: 90px;
+        right: 100%;
+        clear: both;
+        line-height: 70px;
+    }
+</style>
+<body>
+<div id="menu">
+    <ul>
+        <li><a href="#">Logo</a>
+        <ul>
+            <li><a href="#">Logo 1</a></li>
+            <li><a href="#">Logo 2</a></li>
+            <li><a href="#">Logo 3</a></li>
+        </ul>
+        </li>
+        <li><a href="#">Home</a>
+            <ul>
+                <li><a href="#">Home 1</a></li>
+                <li><a href="#">Home 2</a></li>
+                <li><a href="#">Home 3</a></li>
+            </ul>
+        </li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Projects</a></li>
+        <li><a href="#">Contract</a></li>
+        <div id="login">Login</div>
+    </ul>
+</div>
+<div id="header1" class="box"></div>
+<div id="header2" class="box">
+    <h1>Welcome</h1>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+    <p>dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
+    <p>commodo consequat. Excepteur sint occaecat cupidatat non proident,</p>
+    <p>sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,</p>
+    <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+    <p> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    <h2>Test</h2>
+    <p>Lorem ipsum...</p>
+</div>
+<div id="header3" class="box">
+    <div id="ad">ADS</div>
+    <div id="as">ADS</div>
+</div>
+<div id="bot"><h3>Footer Text</h3>
+</div>
+</body>
+</html>
