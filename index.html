@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        height: 100vh;
+        background: linear-gradient(to right, grey, lightsteelblue);
+        font-family: Cambria;
+    }
+    p, h3{
+        font-size: 20px;
+        text-align: center;
+        color: black;
+        font-weight: bold;
+    }
+    .card {
+        margin: 120px auto;
+        width: 320px;
+        height: 417px;
+        background: darkgrey;
+        border-radius: 15px;
+        padding: 20px;
+        color: paleturquoise;
+        position: relative;
+    }
+    .card-heart, .card-cart {
+        font-size: 30px;
+        position: absolute;
+        left: 20px;
+        top: 15px;
+        cursor: pointer;
+    }
+    .card-cart {
+        left: unset;
+        right: 20px;
+    }
+    .card-img {
+        width: 80%;
+        margin-left: 25%;
+        transition: 1s;
+    }
+    .card-img img {
+        width: 53%;
+        height: 60%;
+        object-fit: cover;
+    }
+    .card-color, .card-number{
+        display: flex;
+        align-items: center;
+    }
+    .card-color, .card-number, .card-action{
+        margin-bottom: 18px;
+    }
+    .card-number span{
+        padding: 8px;
+        background: #CDCDCD;
+        color: black;
+        border-radius: 5px;
+        margin: 8px;
+    }
+    .card-color span{
+        width: 17px;
+        height: 17px;
+        border-radius: 50%;
+        margin: 0 6px;
+        cursor: pointer;
+    }
+    .card-color-white{
+        background: white;
+    }
+    .card-color-black{
+        background: black;
+    }
+    .card-color-pink{
+        background: pink;
+    }
+    .card-action button{
+        background: black;
+        border: none;
+        outline: none;
+        color: white;
+        padding: 10px 23px;
+        border-radius: 7px;
+        font-weight: bold;
+        transition: 0.25s;
+        cursor: pointer;
+        margin-bottom: 150px;
+    }
+    .card-action button:hover{
+        transform: scale(0.9);
+    }
+    .card:hover .card-img{
+        transform:translateY(-90px) rotate(-10deg);
+    }
+    .card:hover .card-title{
+        transform:translate(-38px, -72px);
+    }
+    .card:hover .card-price{
+        transform:translate(-105px, -72px);
+    }
+    .card-number{
+        margin-top: 150px;
+    }
+    .card-number, .card-color, .card-action{
+        visibility: hidden;
+        opacity: 0;
+        transition: 1s;
+        transition-delay: 0.4s ;
+    }
+    .card:hover .card-number,
+    .card:hover .card-color,
+    .card:hover .card-action{
+        visibility: visible;
+        opacity: 100;
+    }
+    .card:hover .card-number{
+        margin-top: -30px;
+    }
+    .card-title, .card-price{
+        transition: 1s;
+    }
+</style>
+<body>
+<div class="card">
+    <div class="card-heart">
+        <i class='bx bxs-heart'></i>
+    </div>
+    <div class="card-cart">
+        <i class='bx bxs-cart'></i>
+    </div>
+    <div class="card-img">
+        <img src="ghecongthaihoc.png"/></div>
+    <div class="card-title">
+        <p>Ghế Công Thái Học - KD12</p>
+    </div>
+    <div class="card-price">
+        <p>2.350.000đ</p>
+    </div>
+    <div class="card-number">
+        <h3>Số lượng còn : </h3>
+        <span>7</span>
+    </div>
+    <div class="card-color">
+        <h3>Màu sắc : </h3>
+        <span class="card-color-white"></span>
+        <span class="card-color-black"></span>
+        <span class="card-color-pink"></span>
+    </div>
+    <div class="card-action">
+        <button>Mua ngay</button>
+        <button>Thêm vào giỏ hàng</button>
+    </div>
+</body>
+</html>
