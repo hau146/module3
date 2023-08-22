@@ -1,0 +1,33 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background: linear-gradient(to right, darkgrey,lightblue);
+    color: black;
+}
+body{
+    height: 100vh;
+    font-weight: bold;
+}
+.class-img{
+    height: 230px;
+    width: 240px;
+    float: left;
+    border-radius: 14px;
+    align-items: center;
+    margin: 20px 65px;
+    box-shadow: 10px 11px 12px;
+}
+.class-img img{
+    width: 100%;
+    height: 60%;
+}
+.class-img h2{
+    font-size: 14px;
+    text-align: center;
+    line-height: 80px;
+}
+.class-content{
+    display: inline-block;
+    margin: 40px;
+}
