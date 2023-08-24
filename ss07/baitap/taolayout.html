@@ -10,7 +10,6 @@
         margin: 0;
     }
     #menu{
-        height: 70px;
         padding: 0;
         margin: 0;
         background-color: gray;
@@ -67,21 +66,18 @@
     }
     #header1{
         background: darkseagreen;
-        height: 600px;
-        width: 20%;
-        float: left;
+
+
     }
     #header2{
         background: blanchedalmond;
-        height: 600px;
-        width: 60%;
-        float: left;
+
+
     }
     #header3{
         background: darkseagreen;
-        height: 600px;
-        width: 20%;
-        float: left;
+
+
     }
     #ad{
         text-align: center;
@@ -112,45 +108,57 @@
         clear: both;
         line-height: 70px;
     }
+    .container{
+        display: grid;
+        grid-template-columns: 1fr 4fr 1fr;
+    }
+    .container-1{
+        display: grid;
+        grid-template-columns: auto;
+    }
 </style>
 <body>
-<div id="menu">
-    <ul>
-        <li><a href="#">Logo</a>
+<div class="container-1">
+    <div id="menu">
         <ul>
-            <li><a href="#">Logo 1</a></li>
-            <li><a href="#">Logo 2</a></li>
-            <li><a href="#">Logo 3</a></li>
+            <li><a href="#">Logo</a>
+                <ul>
+                    <li><a href="#">Logo 1</a></li>
+                    <li><a href="#">Logo 2</a></li>
+                    <li><a href="#">Logo 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Home</a>
+                <ul>
+                    <li><a href="#">Home 1</a></li>
+                    <li><a href="#">Home 2</a></li>
+                    <li><a href="#">Home 3</a></li>
+                </ul>
+            </li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Projects</a></li>
+            <li><a href="#">Contract</a></li>
+            <div id="login">Login</div>
         </ul>
-        </li>
-        <li><a href="#">Home</a>
-            <ul>
-                <li><a href="#">Home 1</a></li>
-                <li><a href="#">Home 2</a></li>
-                <li><a href="#">Home 3</a></li>
-            </ul>
-        </li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Projects</a></li>
-        <li><a href="#">Contract</a></li>
-        <div id="login">Login</div>
-    </ul>
+    </div>
 </div>
-<div id="header1" class="box"></div>
-<div id="header2" class="box">
-    <h1>Welcome</h1>
-    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
-    <p>dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
-    <p>commodo consequat. Excepteur sint occaecat cupidatat non proident,</p>
-    <p>sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,</p>
-    <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
-    <p> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <h2>Test</h2>
-    <p>Lorem ipsum...</p>
-</div>
-<div id="header3" class="box">
-    <div id="ad">ADS</div>
-    <div id="as">ADS</div>
+<div class="container">
+    <div id="header1" class="box"></div>
+    <div id="header2" class="box">
+        <h1>Welcome</h1>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et</p>
+        <p>dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea</p>
+        <p>commodo consequat. Excepteur sint occaecat cupidatat non proident,</p>
+        <p>sunt in culpa qui officia deserunt mollit anim id est laborum consectetur adipiscing elit,</p>
+        <p>sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</p>
+        <p> quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        <h2>Test</h2>
+        <p>Lorem ipsum...</p>
+    </div>
+    <div id="header3" class="box">
+        <div id="ad">ADS</div>
+        <div id="as">ADS</div>
+    </div>
 </div>
 <div id="bot"><h3>Footer Text</h3>
 </div>

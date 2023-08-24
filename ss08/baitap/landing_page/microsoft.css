@@ -34,7 +34,6 @@
     padding: 15px;
 }
 .class-bnt{
-    float: left;
     margin-bottom: 70px;
     clear: both;
 }
@@ -46,9 +45,7 @@
     background: black;
     color: white;
     padding: 15px;
-    position: absolute;
-    left: 470px;
-    float: left;
+    margin-left: 70px;
 }
 .class-img-left{
     height: 600px;
@@ -60,8 +57,7 @@
     object-fit: cover;
 }
 .class-img-right{
-    height: 600px;
-    float: left;
+    width: 600px;
 }
 .class-img-2{
     border-radius: 10px;
@@ -84,7 +80,7 @@
     float: left;
     height: 350px;
     width: 50%;
-    box-shadow: 6px 5px 5px gray;
+    box-shadow: 1px 5px 5px gray;
     border-radius: 14px;
 }
 .class-header-2-left-img{
