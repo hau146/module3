@@ -14,7 +14,7 @@ public class DiscountServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Double ListPrice = Double.parseDouble(request.getParameter("listPrice"));
+        Double listPrice = Double.parseDouble(request.getParameter("listPrice"));
         Double discountPercent = Double.parseDouble(request.getParameter("discountPercent"));
         Double discountAmount = listPrice * discountPercent * 0.01;
         Double discountPrice = discountPercent - discountAmount;
