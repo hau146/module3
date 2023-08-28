@@ -1,11 +1,14 @@
-package com.example.product_discount_dalculator;
+package com.example.ss09;
 
-import javax.servlet.*;
+import com.example.ss09.service.DiscountService;
+
+import java.io.*;
+import javax.servlet.RequestDispatcher;
+import javax.servlet.ServletException;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-import java.io.IOException;
 
-@WebServlet(name = "DiscountServlet", value = "/discount-servlet")
+@WebServlet(name = "DiscountServlet", value = "/discount")
 public class DiscountServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -16,13 +19,13 @@ public class DiscountServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         Double listPrice = Double.parseDouble(request.getParameter("listPrice"));
         Double discountPercent = Double.parseDouble(request.getParameter("discountPercent"));
-        Double discountAmount = listPrice * discountPercent * 0.01;
-        Double discountPrice = discountPercent - discountAmount;
+        Double discountAmount = DiscountService.getDouble(listPrice, discountPercent);
+        Double discountPrice = DiscountService.getDiscountPrice(discountPercent, discountAmount);
         request.setAttribute("discountAmount",discountAmount);
         request.setAttribute("discountPrice",discountPrice);
-        request.setAttribute("ListPrice",ListPrice);
+        request.setAttribute("listPrice",listPrice);
         request.setAttribute("DiscountPercent",discountPercent);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/display.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/display-discount.jsp");
         requestDispatcher.forward(request,response);
     }
 }
