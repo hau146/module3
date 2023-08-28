@@ -14,15 +14,15 @@ public class DiscountServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        Double ListPrice = Double.parseDouble(request.getParameter("ListPrice"));
+        Double ListPrice = Double.parseDouble(request.getParameter("listPrice"));
         Double discountPercent = Double.parseDouble(request.getParameter("discountPercent"));
-        Double discountAmount = ListPrice * discountPercent * 0.01;
+        Double discountAmount = listPrice * discountPercent * 0.01;
         Double discountPrice = discountPercent - discountAmount;
         request.setAttribute("discountAmount",discountAmount);
         request.setAttribute("discountPrice",discountPrice);
         request.setAttribute("ListPrice",ListPrice);
         request.setAttribute("DiscountPercent",discountPercent);
-        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/display-discount.jsp");
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("/display.jsp");
         requestDispatcher.forward(request,response);
     }
 }
