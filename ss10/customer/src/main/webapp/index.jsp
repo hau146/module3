@@ -8,6 +8,6 @@
 </head>
 <body>
 <h1>Hello</h1>
-<a href="student">show list</a>
+<a href="customer">show list</a>
 </body>
 </html>

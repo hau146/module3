@@ -24,13 +24,13 @@
     <th>Edit</th>
     <th>Delete</th>
 </tr>
-    <c:forEach items='${requestScope["customers"]}' var="c">
+    <c:forEach items='${requestScope["customers"]}' var="customer">
         <tr>
-            <td><a href="customers?action=view&id=${customer.getId()}">${c.getName()}</a></td>
-            <td>${c.getEmail()}</td>
-            <td>${c.getAddress()}</td>
-            <td><a href="customers?action=edit&id=${c.getId}"></a>edit</td>
-            <td><a href="customers?action=delete&id=${c.getId}">delete</a></td>
+            <td><a href="customers?action=view&id=${customer.getId()}">${customer.getName()}</a></td>
+            <td>${customer.getEmail()}</td>
+            <td>${customer.getAddress()}</td>
+            <td><a href="customers?action=edit&id=${customer.getId()}">edit</a></td>
+            <td><a href="customers?action=delete&id=${customer.getId()}">delete</a></td>
         </tr>
     </c:forEach>
 </table>
