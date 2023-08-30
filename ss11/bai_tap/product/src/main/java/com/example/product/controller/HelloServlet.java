@@ -1,4 +1,4 @@
-package com.example.product;
+package com.example.product.controller;
 
 import java.io.*;
 import javax.servlet.http.*;

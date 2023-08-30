@@ -1,23 +1,22 @@
-package com.example.ss10.repository;
-
+package com.example.product.repository;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class BaseRepository {
-    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/jdbc";
+    private static final String JDBC_URL = "jdbc:mysql://localhost:3306/ss11";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "12345678";
+    private static final String PASSWORD = "hau2409202";
 
-    private BaseRepository() {
+    public BaseRepository() {
     }
 
-    public static Connection getConnection() {
+    public static Connection getConnection(){
         Connection connection = null;
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-            connection = DriverManager.getConnection(JDBC_URL, USERNAME, PASSWORD);
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection(JDBC_URL,USERNAME,PASSWORD);
         } catch (SQLException e) {
             e.printStackTrace();
         } catch (ClassNotFoundException e) {
