@@ -1,14 +1,14 @@
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%--
   Created by IntelliJ IDEA.
   User: ACER
   Date: 30/08/2023
-  Time: 2:14 PM
+  Time: 9:13 PM
   To change this template use File | Settings | File Templates.
 --%>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
+    <title>Title</title>
     <title>Title</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
           integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
@@ -26,6 +26,7 @@
 </form>
 <button class="btn btn-secondary"><a href="user?action=showFormSortUp" style="color: black">Sắp xếp tăng</a></button>
 <button class="btn btn-secondary"><a href="user?action=showFormSortDown" style="color: black">Sắp xếp giảm</a></button>
+<button class="btn btn-secondary"><a href="user" style="color: black">Quay lại ban đầu</a></button>
 <br><br>
 <table class="table table-hover">
     <thead>
@@ -86,6 +87,5 @@
     }
 </script>
 
-<%--<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.20/dist/sweetalert2.all.min.js"></script>--%>
 </body>
 </html>

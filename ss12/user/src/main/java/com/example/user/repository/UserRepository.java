@@ -11,6 +11,8 @@ public class UserRepository implements IUserRepository{
     private static final String SELECT_USER = "select * from users where delete_users = 0;";
     private static final String UPDATE_USER = "update users set name = ?, email = ?, country = ? where id = ?;";
     private static final String DELETE_USER = "update users set delete_users = ? where id = ?";
+    private static final String SORT_UP = "select * from users where delete_users = 0 order by country asc;";
+    private static final String SORT_DOWN = "select * from users where delete_users = 0 order by country desc;";
 //    private static final String SEARCH_COUNTRY = "select * from users where country like ?%;";
 
     @Override
@@ -117,5 +119,45 @@ public class UserRepository implements IUserRepository{
             throw new RuntimeException(e);
         }
         return userList;
+    }
+
+    @Override
+    public List<User> sortUp() {
+        Connection connection = BaseRepository.getConnection();
+        List<User> sortUpList = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(SORT_UP);
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                sortUpList.add(new User(id,name,email,country));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return sortUpList;
+    }
+
+    @Override
+    public List<User> sortDown() {
+        Connection connection = BaseRepository.getConnection();
+        List<User> sortDownList = new ArrayList<>();
+        try {
+            Statement statement = connection.createStatement();
+            ResultSet resultSet = statement.executeQuery(SORT_DOWN);
+            while (resultSet.next()){
+                int id = resultSet.getInt("id");
+                String name = resultSet.getString("name");
+                String email = resultSet.getString("email");
+                String country = resultSet.getString("country");
+                sortDownList.add(new User(id,name,email,country));
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return sortDownList;
     }
 }

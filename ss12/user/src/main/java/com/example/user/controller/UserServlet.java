@@ -28,8 +28,40 @@ public class UserServlet extends HttpServlet {
             case "showFormUpdate":
                 showFormUpdate(request, response);
                 break;
+            case "showFormSearch":
+                showFormSearch(request, response);
+                break;
+            case "showFormSortUp":
+                showFormSortUp(request, response);
+                break;
+            case "showFormSortDown":
+                showFormSortDown(request, response);
+                break;
             default:
                 showList(request, response);
+        }
+    }
+
+    private void showFormSortDown(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<User> userList = userService.sortDown();
+        request.setAttribute("userList", userList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("list.jsp");
+        requestDispatcher.forward(request, response);
+    }
+
+    private void showFormSortUp(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        List<User> userList = userService.sortUp();
+        request.setAttribute("userList", userList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("list.jsp");
+        requestDispatcher.forward(request, response);
+    }
+
+    private static void showFormSearch(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("search.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -74,7 +106,23 @@ public class UserServlet extends HttpServlet {
                 break;
             case "delete":
                 deleteUser(request, response);
+                break;
+            case "search":
+                searchByCountry(request, response);
+                
 
+        }
+    }
+
+    private void searchByCountry(HttpServletRequest request, HttpServletResponse response) {
+        String country = request.getParameter("country");
+        List<User> userList = userService.searchByCountry(country);
+        request.setAttribute("userList",userList);
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("search.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException | IOException e) {
+            throw new RuntimeException(e);
         }
     }
 

@@ -17,3 +17,9 @@ select * from users;
 update users set name = "longgg", email = "long@gmail.com", country = "viet nam" where id = 1;
 
 alter table users add delete_users bit default 0;
+
+select * from users where country like "v%";
+
+select * from users order by country asc;
+select * from users order by country desc;
+

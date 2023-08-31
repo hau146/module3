@@ -11,6 +11,27 @@
     <title>Title</title>
 </head>
 <body>
-
+<h1>Danh sách user</h1>
+<a href="user">Quay lại trang chủ</a>
+table border="1px" style="padding: 12px; border-collapse: collapse">
+<thead>
+<tr>
+    <th>STT</th>
+    <th>Tên user</th>
+    <th>Email</th>
+    <th>Quốc gia</th>
+</tr>
+</thead>
+<tbody>
+<c:forEach var="user" items="${userList}" varStatus="loop">
+    <tr>
+        <td><c:out value="${loop.count}"/></td>
+        <td><c:out value="${user.name}"/></td>
+        <td><c:out value="${user.email}"/></td>
+        <td><c:out value="${user.country}"/></td>
+    </tr>
+</c:forEach>
+</tbody>
+</table>
 </body>
 </html>
