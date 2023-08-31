@@ -14,3 +14,8 @@ VALUES ('giày', '12000', 'để mang', 'nike'),
 ('mũ', '10000', 'để đội', 'LV'),
 ('nước hoa', '24000', 'để thơm', 'dior'),
 ('áo', '15000', 'để mặc', 'HL');
+
+delete from product where id = 6;
+alter table product add delete_product bit default 0;
+
+update product set delete_product = 1 where id = 1;

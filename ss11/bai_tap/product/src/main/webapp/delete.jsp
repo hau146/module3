@@ -11,7 +11,7 @@
     <title>Title</title>
 </head>
 <body>
-<h1>Quay lại trang chủ</h1>
+<p><a href="product">Trang chủ</a></p>
 <form action="product?action=delete&id=${product.getId()}" method="post">
     <fieldset>
         <legend>product information</legend>

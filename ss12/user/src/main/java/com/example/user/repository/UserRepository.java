@@ -8,9 +8,9 @@ import java.util.List;
 
 public class UserRepository implements IUserRepository{
     private static final String INSERT_USER = "insert into users(name, email, country) values (?,?,?);";
-    private static final String SELECT_USER = "select * from users where delete_users = 0;";
-    private static final String UPDATE_USER = "update users set name = ?, email = ?, country = ? where id = ?;";
-    private static final String DELETE_USER = "update users set delete_users = ? where id = ?";
+    private static final String SELECT_USER = "call get_user;";
+    private static final String UPDATE_USER = "call edit_user(?,?,?,?);";
+    private static final String DELETE_USER = "call delete_user(?)";
     private static final String SORT_UP = "select * from users where delete_users = 0 order by country asc;";
     private static final String SORT_DOWN = "select * from users where delete_users = 0 order by country desc;";
 //    private static final String SEARCH_COUNTRY = "select * from users where country like ?%;";
@@ -20,8 +20,8 @@ public class UserRepository implements IUserRepository{
         Connection connection = BaseRepository.getConnection();
         List<User> userList = new ArrayList<>();
         try {
-            Statement statement = connection.createStatement();
-            ResultSet resultSet = statement.executeQuery(SELECT_USER);
+            CallableStatement callableStatement = connection.prepareCall(SELECT_USER);
+            ResultSet resultSet = callableStatement.executeQuery();
             while (resultSet.next()){
                 int id = resultSet.getInt("id");
                 String name = resultSet.getString("name");
@@ -53,12 +53,12 @@ public class UserRepository implements IUserRepository{
     public void update(int id, User user) {
         Connection connection = BaseRepository.getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(UPDATE_USER);
-            preparedStatement.setString(1, user.getName());
-            preparedStatement.setString(2,user.getEmail());
-            preparedStatement.setString(3,user.getCountry());
-            preparedStatement.setInt(4,id);
-            preparedStatement.executeUpdate();
+            CallableStatement callableStatement = connection.prepareCall(UPDATE_USER);
+            callableStatement.setString(1, user.getName());
+            callableStatement.setString(2,user.getEmail());
+            callableStatement.setString(3,user.getCountry());
+            callableStatement.setInt(4,id);
+            callableStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
@@ -68,10 +68,9 @@ public class UserRepository implements IUserRepository{
     public void delete(int id) {
         Connection connection = BaseRepository.getConnection();
         try {
-            PreparedStatement preparedStatement = connection.prepareStatement(DELETE_USER);
-            preparedStatement.setInt(1,1);
-            preparedStatement.setInt(2,id);
-            preparedStatement.executeUpdate();
+            CallableStatement callableStatement = connection.prepareCall(DELETE_USER);
+            callableStatement.setInt(1,id);
+            callableStatement.executeUpdate();
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
