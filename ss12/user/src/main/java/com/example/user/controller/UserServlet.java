@@ -37,9 +37,29 @@ public class UserServlet extends HttpServlet {
             case "showFormSortDown":
                 showFormSortDown(request, response);
                 break;
+            case "testUseTran":
+                testUseTran(request, response);
+                break;
+            case "addUserTransaction":
+                addUserTransaction(request, response);
             default:
                 showList(request, response);
         }
+    }
+
+    private static void addUserTransaction(HttpServletRequest request, HttpServletResponse response) {
+        RequestDispatcher requestDispatcher = request.getRequestDispatcher("create.jsp");
+        try {
+            requestDispatcher.forward(request,response);
+        } catch (ServletException e) {
+            throw new RuntimeException(e);
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void testUseTran(HttpServletRequest request, HttpServletResponse response) {
+        userService.insertUpdateUseTransaction();
     }
 
     private void showFormSortDown(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -109,8 +129,6 @@ public class UserServlet extends HttpServlet {
                 break;
             case "search":
                 searchByCountry(request, response);
-                
-
         }
     }
 

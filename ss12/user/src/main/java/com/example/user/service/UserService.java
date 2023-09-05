@@ -47,4 +47,14 @@ public class UserService implements IUserService{
     public List<User> sortDown() {
         return userRepository.sortDown();
     }
+
+    @Override
+    public void insertUpdateUseTransaction() {
+        userRepository.insertUpdateUseTransaction();
+    }
+
+    @Override
+    public void addUserTransaction(User user, List<Integer> permission) {
+        userRepository.addUserTransaction(user,permission);
+    }
 }

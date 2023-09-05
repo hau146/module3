@@ -13,4 +13,6 @@ public interface IUserRepository {
     List<User> searchByCountry(String countrySearch);
     List<User> sortUp();
     List<User> sortDown();
+    void insertUpdateUseTransaction();
+    void addUserTransaction(User user, List<Integer> permission);
 }
